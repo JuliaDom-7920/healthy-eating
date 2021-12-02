@@ -1,0 +1,9 @@
+@media (min-width: 1200px) {
+	.navbar-nav {
+		margin-right: 11%;
+	}
+	.category {
+		grid-template: 2fr / 0.75fr 1fr 0.75fr;
+		justify-items: center;
+	}
+}

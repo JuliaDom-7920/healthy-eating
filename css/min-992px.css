@@ -1,0 +1,48 @@
+@media (min-width: 992px) {
+	.navbar .container {
+		position: relative;
+		grid-template: 1fr / 20% 80%;
+	}
+	.top-bar {
+		grid-template: 1fr / 1fr;
+	}
+	.top-bar .logo {
+		justify-self: flex-start;
+	}
+	.navbar-toggler {
+		position: absolute;
+		right: 15px;
+	}
+	.navbar-nav {
+		grid-template: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0 10% 0 0;
+	}
+	header h1 {
+		padding-top: 156px;
+	}
+	table {
+		font-size: 1rem;
+	}
+	table th:nth-child(2) {
+		white-space: nowrap;
+	}
+	.category {
+		grid-template: 3fr / 1fr 0.6fr;
+		justify-items: flex-start;
+	}
+	.dish {
+		grid-template: 1fr / 0.5fr 1fr;
+	}
+	.image {
+		margin: 10px 50px 50px 0;
+	}
+	.product {
+		grid-template: 1fr / 1fr 1fr;
+	}
+	footer .navbar .container {
+		grid-template: 1fr /100%;
+	}
+}

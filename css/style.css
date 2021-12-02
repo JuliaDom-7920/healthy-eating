@@ -1,0 +1,420 @@
+body {
+	font-family: Montserrat, sans-serif;
+	background: #fafafa;
+}
+[data-title] {position: relative}
+[data-title]:after {
+	content: attr(data-title);
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1000;
+	position: absolute;
+	top: calc(50% - 11px);
+  left: calc(50% - 37.5px);
+	padding: 2px 8px;
+	font-size: 13px;
+	font-weight: 300;
+	white-space: nowrap;
+	color: #444;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ddd));
+	background-image: -webkit-linear-gradient(top, #fff, #ddd);
+	border-radius: 3px;
+	box-shadow: 0 0 5px #ccc;
+}
+[data-title]:hover:after {
+	opacity: 1;
+	visibility: visible;
+	-moz-transition: all 0.2s ease-out 0.3s;
+	-webkit-transition: all 0.2s ease-out 0.3s;
+	-o-transition: all 0.2s ease-out 0.3s;
+	-ms-transition: all 0.2s ease-out 0.3s;
+	transition: all 0.2s ease-out 0.3s;
+}
+.navbar .container,
+.top-bar,
+.navbar-nav,
+.category,
+.dish,
+.dish .description .ing-por-time,
+.dish .ingredients.dropdown,
+.dish .ingredients.dropdown .ingredients-head,
+.dish .ingredients.dropdown .ingredients-body,
+.dish .ingredients.dropdown .ingredients-body li,
+.product,
+footer {
+	display: grid;
+}
+.navbar .container {
+	grid-template: 2fr / 1fr;
+}
+.top-bar {
+	grid-template: 1fr / 1fr 0.06fr;
+}
+.logo {
+	justify-self: center;
+	width: 115px;
+}
+.navbar-toggler {
+	width: 1.55rem;
+	margin: 10px 0;
+	padding: 0;
+	border: none;
+}
+.navbar-toggler:focus,
+.dish .ingredients.dropdown .link-recipes button:focus {
+	outline: none;
+}
+.navbar-toggler-icon {
+	display: block;
+	width: 25px;
+  height: 2px;
+	margin: 6px 0;
+	background: #fff;
+	transition: background .15s ease-in-out;
+}
+.navbar-toggler:hover .navbar-toggler-icon {
+	background: #c47e5e;
+}
+.navbar-nav {
+	grid-template: 3fr / 1fr 0.6fr;
+	margin: 10px 0;
+}
+.navbar-nav .nav-item:nth-child(1) {
+	grid-row-start: 1; 
+}
+.navbar-nav .nav-item:nth-child(2) {
+	grid-row-start: 2; 
+}
+.navbar-nav .nav-item:nth-child(3) {
+	grid-row-start: 3; 
+}
+.nav-link {
+	width: max-content;
+	font-weight: 500;
+	color: #f8f9fa;
+	transition: color .15s ease-in-out;
+}
+.nav-link:hover {
+	color: #c47e5e;
+}
+.section-title {
+	display: inline-block;
+	width: 100%;
+	margin: 66px 0;
+	padding: 14px 0;
+	font-weight: 600;
+	color: #c47e5e;
+}
+header {
+	position: relative;
+	height: 400px;
+	margin-top: 66px !important;
+	background: url(../img/header.jpg) no-repeat 15% 25% fixed;
+	background-size: cover;
+}
+.bg-translucent {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #5f6a6d7a;
+}
+header h1 {
+	position: relative;
+	z-index: 2;
+	padding-top: 96px;
+	font-weight: 700;
+}
+h3 {
+	position: relative;
+	margin-top: 50px;
+}
+h3::after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: #8AC2AD;
+}
+table {
+	margin-top: 20px;
+	font-size: 0.8rem;
+}
+table th {
+	font-weight: 600;
+	vertical-align: middle !important;
+	color: #fff;
+	background: #8AC2AD;
+}
+table tr:nth-of-type(odd) {
+	background: #e1f1eb !important;
+}
+table tr:hover {
+	background: rgb(5, 134, 120, 0.12) !important;
+}
+table th,
+table td:nth-child(1),
+table td:nth-child(2),
+.category li,
+.image,
+.product table {
+	text-align: center;
+}
+.content {
+	background: #fafafa;
+}
+.content ul {
+	margin: 20px 0;
+	padding-inline-start: 0;
+}
+.content li {
+	list-style-type: none;
+	margin: 20px 0;
+	line-height: 1.8rem;
+}
+.hair li::before,
+.vitamins li::before,
+.minerals li::before {
+	content: "\2605";
+	margin-right: 10px;
+	padding: 0 4.5px;
+	font-size: 1.5rem;
+	color: #fff;
+  background: #76C2A5;
+  border: 4.5px solid #fff;
+	border-radius: 50%;
+}
+.category {
+	grid-template: 6fr / 1fr;
+	justify-items: center;
+}
+.category li {
+	position: relative;
+}
+.category .bg-translucent,
+.category h4 {
+	display: none;
+	transition: .5s;
+}
+.category li:hover .bg-translucent,
+.category li:hover h4 {
+	display: block;
+	transition: .5s;
+}
+.category li:hover img,
+.category li:hover .bg-translucent {
+	filter: blur(2px);
+	transition: .5s;
+}
+.category img,
+.category .bg-translucent,
+.dish .image img {
+	border-radius: 50%;
+	transition: .5s;
+}
+.category h4 {
+	position: absolute;
+  z-index: 2;
+  top: calc(50% - 26px);
+  left: -5px;
+  right: -5px;
+	padding: 12px;
+	color: #234337;
+	background: rgba(255,255,255,.65);
+	overflow: hidden;
+}
+.category h4:hover {
+	color: #8AC2AD;
+}
+.recipes .container {
+	position: relative;
+}
+.menu-bar {
+	position: sticky;
+	z-index: 3;
+	top: 76px;
+	width: 447px;
+}
+.menu {
+	position: absolute;
+}
+.menu ul,
+.menu li,
+.dish .description ul,
+.dish .description li {
+	margin: 0;
+}
+.menu > ul > li {
+	position: relative;
+	z-index: 3;
+	display: inline-block;
+	width: 146px;
+}
+.menu a {
+	display: block;
+	margin-bottom: 3px;
+	padding: 4px 8px;
+	font-size: 0.7rem;
+	text-decoration: none;
+	color: #212529;
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-radius: 2px;
+}
+.menu a:hover {
+	color: #fff;
+	background: #76C2A5;
+}
+.menu > ul > li > a {
+	font-size: 0.65rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.menu > ul > li > a:hover .menu > ul > li {
+	height: 325px;
+	overflow: hidden;
+}
+.menu li ul {
+	display: none;
+	width: 146px;
+}
+.menu li:hover ul {
+	position: absolute;
+	z-index: -1;
+	display: block;
+}
+.recipes h3:first-of-type {
+	margin-top: 0;
+	padding-top: 128px;
+}
+.dish {
+	grid-template: 2fr / 1fr;
+	margin: 50px 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+.image {
+	margin: 10px 0 50px;
+}
+.dish .description a {
+	color: #40846A;
+	font-size: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: .5s;
+}
+.dish .description a:hover {
+	color: #8AC2AD;
+	text-decoration: underline;
+	transition: .5s;
+}
+.dish .description h4 {
+	font-size: 1.5rem;
+	margin: 20px 0 30px;
+}
+.dish .description .ing-por-time {
+	grid-template: 1fr / 150px 130px 110px;
+}
+.dish .description .ing-por-time li {
+	line-height: 0.8rem;
+}
+.dish .description #ingredients,
+.dish .ingredients.dropdown .minus,
+.dish .ingredients.dropdown .plus {
+	cursor: pointer;
+}
+.dish .description .por,
+.dish .description .time {
+	display: block;
+	width: 21px;
+	position: relative;
+	top: -11px;
+	left: 90px;
+}
+.dish .ingredients.dropdown {
+	grid-template: 3fr / 1fr;
+	margin-bottom: 20px;
+	padding: 19px 30px 24px;
+	font-size: 0.8rem;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+}
+.dish .ingredients.dropdown p {
+	display: inline-block;
+}
+.dish .ingredients.dropdown .ingredients-head {
+	grid-template: 1fr / repeat(2,1fr);
+}
+.dish .ingredients.dropdown .ingredients-head li:first-child {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.dish .ingredients.dropdown .ingredients-head li:last-child {
+	justify-self: flex-end;
+}
+.dish .ingredients.dropdown .ingredients-body {
+	grid-template: 1fr / 1fr;
+}
+.dish .ingredients.dropdown .ingredients-body li {
+	grid-template: 1fr / 0fr 1fr;
+	overflow: hidden;
+	margin-bottom: 5px;
+	white-space: nowrap;
+	border-bottom: 1px dotted #333;
+}
+.dish .ingredients.dropdown .ingredients-body li p:first-child {
+	margin-block-end: 0;
+}
+.dish .ingredients.dropdown .ingredients-body li p:last-child {
+	justify-self: flex-end;
+	margin-block-end: 0;
+	white-space: nowrap;
+}
+.dish .ingredients.dropdown .link-recipes {
+	margin-top: 15px;
+}
+.dish .ingredients.dropdown .link-recipes button {
+	padding: 3px 0;
+	font-size: 0.6rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	background: #fff;
+	border: 1px solid #40846A;
+	border-radius: 4px;
+	transition: .5s;
+}
+.dish .ingredients.dropdown .link-recipes button:hover {
+	color: #8AC2AD;
+	border: 1px solid #8AC2AD;
+}
+.product {
+	grid-template: 330px 1fr / 1fr;
+	margin: 50px 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+.product .image {
+	
+}
+.product .description {
+	margin-bottom: 15px;
+}
+footer {
+	grid-template: 3fr / 1fr;
+	margin-top: 96px;
+	font-size: 0.81rem;
+	color: #f8f9fa;
+}
+footer .navbar-nav {
+	margin: 20px 0;
+}
+footer .logo {
+	margin-bottom: 20px;
+}
+
+@media (min-width: 538px) {
+	header h1 {
+		padding-top: 126px;
+	}
+}
